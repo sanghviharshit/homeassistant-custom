@@ -1,0 +1,54 @@
+homeassistant:
+  name: SanghviHA
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: metric
+  time_zone: America/New_York
+
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
+     api_password: !secret http_api_password
+   - type: trusted_networks
+     trusted_networks:
+       - 192.168.1.0/24
+
+http:
+  ip_ban_enabled: True
+  login_attempts_threshold: 5
+
+# Enables configuration UI
+config:
+updater:
+logbook:
+history:
+
+sensor:
+  - platform: mint_finance
+    username: !secret mint_username
+    password: !secret mint_password
+    unit_of_measurement: USD
+    monitored_categories:
+      - investment
+      - bank
+      - 'other property'
+      - credit
+      - loan
+      - 'real estate'
+      - vehicle
+
+    account_currency_override:
+      CAD: !secret mint_account_cad_list
+      USD: !secret mint_account_usd_list
+
+# https://github.com/custom-components/custom_updater
+# https://github.com/pnbruckner/homeassistant-config/blob/master/docs/custom_updater.md
+custom_updater:
+  track:
+    - components
+    - python_scripts
+  component_urls:
+    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/master/custom_components.json
+  python_script_urls:
+    - https://raw.githubusercontent.com/pnbruckner/homeassistant-config/master/python_scripts.json

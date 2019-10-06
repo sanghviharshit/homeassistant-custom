@@ -1,0 +1,14 @@
+{
+  "mint_finance": {
+    "updated_at": "2019-06-01",
+    "version": "1.0.0",
+    "local_location": "/custom_components/mint_finance/__init__.py",
+    "remote_location": "https://raw.githubusercontent.com/sanghviharshit/homeassistant-custom/master/custom_components/mint_finance/__init__.py",
+    "visit_repo": "https://github.com/sanghviharshit/homeassistant-custom",
+    "changelog": "https://github.com/sanghviharshit/homeassistant-custom/blob/master/README.md",
+    "resources": [
+      "https://raw.githubusercontent.com/sanghviharshit/homeassistant-custom/master/custom_components/mint_finance/sensor.py",
+      "https://raw.githubusercontent.com/sanghviharshit/homeassistant-custom/master/custom_components/mint_finance/manifest.json"
+    ]
+  }
+}

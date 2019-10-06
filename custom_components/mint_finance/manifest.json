@@ -1,0 +1,8 @@
+{
+  "domain": "mint_finance",
+  "name": "Mint Finance",
+  "documentation": "https://www.home-assistant.io/components",
+  "dependencies": [],
+  "codeowners": ["@harshit"],
+  "requirements": ["mintapi>=1.40","CurrencyConverter>=0.13.9"]
+}
